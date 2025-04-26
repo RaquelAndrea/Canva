@@ -1,0 +1,71 @@
+
+<html>  
+<head>  
+<title>Flower</title>  
+<script>  
+
+    function drawrect()  
+    {  
+        var canvas = document.getElementById("mycanvas");  
+        var graph = canvas.getContext("2d");  
+
+        graph.fillStyle = "#008000";  
+        graph.fillRect(100, 50, 10, 150);  
+    }  
+    function drawcircle(x, y)  
+    {  
+        var canvas = document.getElementById("mycanvas");  
+        var graph = canvas.getContext("2d");  
+
+        graph.fillStyle = "#FFFF00";  
+        graph.beginPath();  
+        graph.arc(100, 50, 15, 0, 2*Math.PI);  
+        graph.fill();  
+    }  
+    function drawoval(x,y)  
+    {  
+        var canvas = document.getElementById("mycanvas");  
+        var graph = canvas.getContext("2d");  
+        var z = 0; 
+        graph.fillStyle = "#FFB6C1";  
+        graph.beginPath();  
+        for(var i=0 ; i<5; i++)
+        {
+            z= z+37;
+            graph.ellipse(100, 50, 10, 50, z* Math.PI/180, 0, 2 * Math.PI);  
+            graph.fill();  
+        }
+    }
+    function drawoval_2(x,y)  
+    {  
+        var canvas = document.getElementById("mycanvas");  
+        var graph = canvas.getContext("2d");  
+        var z = 18.5; 
+        graph.fillStyle = "#FF1493";  
+        graph.beginPath();  
+        for(var i=0 ; i<5; i++)
+        {
+            z= z+37;
+            graph.ellipse(100, 50, 10, 50, z* Math.PI/180, 0, 2 * Math.PI);  
+            graph.fill();  
+        }
+    }
+    function drawflower() 
+    { 
+        drawrect();
+        drawoval_2();
+        drawoval();
+        drawcircle();
+    }
+</script>  
+</head>  
+<body>  
+    <h1>Canvas Example</h1>  
+    <canvas id="mycanvas" width="400" height="300">  
+    </canvas>  
+    <p><button onclick="drawflower()">Draw Flower</button></p>
+
+</body>  
+</html>  
+
+
